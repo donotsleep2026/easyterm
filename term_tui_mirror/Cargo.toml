@@ -1,0 +1,13 @@
+[package]
+name = "term_tui_mirror"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Thin protocol session and viewport mirror for the EasyTerm TUI"
+
+[dependencies]
+term_client = { path = "../term_client" }
+term_proto = { path = "../term_proto" }
+term_view = { path = "../term_view" }
+tokio = { version = "1", features = ["net", "sync", "rt"] }
+log = "0.4"

@@ -1,0 +1,29 @@
+[package]
+name = "term_discovery"
+description = "Where a daemon on this machine announces the address it listens on: a named shared-memory segment the daemon publishes and every frontend can read, so nobody has to be told the port."
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+log = "0.4"
+hmac = "0.12"
+sha2 = "0.10"
+hex = "0.4"
+getrandom = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+# Named file mappings (`CreateFileMappingW`), which the OS destroys with the
+# publishing process: a crashed daemon cannot leave a stale address behind.
+windows-sys = { version = "0.52", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_Security_Authorization",
+    "Win32_System_Memory",
+    "Win32_System_Threading",
+    "Win32_System_SystemServices",
+    "Win32_Storage_FileSystem",
+] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"

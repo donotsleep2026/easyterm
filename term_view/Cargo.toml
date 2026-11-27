@@ -1,0 +1,10 @@
+[package]
+name = "term_view"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Viewport-only terminal cells and input intents for EasyTerm frontends"
+
+[dependencies]
+alacritty_terminal = "0.26.0"
+term_proto = { path = "../term_proto" }

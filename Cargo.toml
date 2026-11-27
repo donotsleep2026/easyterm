@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = [
+    "term_tui",
+    "term_tui_mirror",
+    "term_view",
+    "term_client",
+    "term_proto",
+    "term_discovery",
+    "term_dsh_model",
+]
+
+[profile.release]
+lto = true
+opt-level = "s"
+panic = "abort"
+codegen-units = 1
+strip = "symbols"
+debug = 0
+incremental = false

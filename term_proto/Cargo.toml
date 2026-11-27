@@ -1,0 +1,12 @@
+﻿[package]
+name = "term_proto"
+description = "UI-free wire protocol for the terminal-core C/S split: length-prefixed frames + typed four-quadrant messages (stage 2 of the core/UI separation design)."
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_bytes = "0.11"
+serde_json = "1"
+rmp-serde = "1.3"
